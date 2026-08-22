@@ -1,0 +1,196 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="-H_mtQnk-PTXWXPvYvuk">
+    <mxGraphModel dx="1179" dy="860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;" value="Задание 5 / schema4: API Gateway + Consul Service Discovery" vertex="1">
+          <mxGeometry height="40" width="680" x="245" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Пользователи" vertex="1">
+          <mxGeometry height="90" width="50" x="20" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;API Gateway&lt;br&gt;load balancing&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="145" x="160" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="consul" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;Consul&lt;br&gt;Service Discovery&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="150" x="157.5" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="app_pool" parent="1" style="swimlane;startSize=26;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;Application&amp;nbsp; &amp;nbsp; instances&lt;/font&gt;" vertex="1">
+          <mxGeometry height="230" width="300" x="340" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="api1" parent="app_pool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;pymongo-api-1&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="100" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api2" parent="app_pool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;pymongo-api-2&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="100" x="110" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="api3" parent="app_pool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;pymongo-api-3&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="100" x="180" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;redis&lt;br&gt;cache&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="110" x="730" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="mongos" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;mongos&lt;br&gt;query router&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="150" x="710" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="cfg_group" parent="1" style="swimlane;startSize=26;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;Config Server&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="230" x="875" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="configsrv" parent="cfg_group" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;font color=&quot;#000000&quot;&gt;configSrv&lt;br&gt;metadata&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="100" x="65" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="rs1" parent="1" style="swimlane;startSize=26;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;Replica set: rs-shard1&lt;/font&gt;" vertex="1">
+          <mxGeometry height="290" width="255" x="585" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="shard1_1" parent="rs1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;shard1-1&lt;br&gt;primary&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="100" x="80" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="shard1_2" parent="rs1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;font color=&quot;#000000&quot;&gt;shard1-2&lt;br&gt;secondary&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="100" x="20" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="shard1_3" parent="rs1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;font color=&quot;#000000&quot;&gt;shard1-3&lt;br&gt;secondary&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="100" x="140" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="rs2" parent="1" style="swimlane;startSize=26;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;Replica set: rs-shard2&lt;/font&gt;" vertex="1">
+          <mxGeometry height="290" width="255" x="880" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="shard2_1" parent="rs2" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="&lt;font color=&quot;#000000&quot;&gt;shard2-1&lt;br&gt;primary&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="100" x="80" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="shard2_2" parent="rs2" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;font color=&quot;#000000&quot;&gt;shard2-2&lt;br&gt;secondary&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="100" x="20" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="shard2_3" parent="rs2" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;font color=&quot;#000000&quot;&gt;shard2-3&lt;br&gt;secondary&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="100" x="140" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;spacing=10;" value="&lt;font color=&quot;#000000&quot;&gt;API Gateway балансирует трафик между несколькими pymongo-api&lt;br&gt;Consul хранит список доступных инстансов приложения&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="425" x="95" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;spacing=10;" value="&lt;font color=&quot;#000000&quot;&gt;Сплошные стрелки: пользовательский, DB-трафик&lt;br&gt;Пунктир: service discovery, registration, cache, metadata, replication&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="425" x="95" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="e_users_gateway" edge="1" parent="1" source="users" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;" target="gateway" value="HTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gateway_api1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="api1" value="balance">
+          <mxGeometry relative="1" x="0.3172" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="305" y="140" as="sourcePoint" />
+            <mxPoint x="400" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_gateway_api2" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;" target="api2" value="balance">
+          <mxGeometry relative="1" x="0.2857" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="490.03" y="120.03" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_gateway_api3" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;exitX=0.997;exitY=0.136;exitDx=0;exitDy=0;exitPerimeter=0;" value="balance">
+          <mxGeometry relative="1" x="0.2954" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="575" y="99.5" />
+            </Array>
+            <mxPoint x="310" y="100.01" as="sourcePoint" />
+            <mxPoint x="575" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_api1_consul" edge="1" parent="1" source="api1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=1;dashed=1;strokeColor=#82b366;" target="consul" value="register">
+          <mxGeometry relative="1" x="-0.0942" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="420" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_api3_consul" edge="1" parent="1" source="api3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=1;dashed=1;strokeColor=#82b366;" target="consul" value="register">
+          <mxGeometry relative="1" x="0.1089" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="350" y="360" />
+              <mxPoint x="350" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_gateway_consul" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;dashed=1;strokeColor=#82b366;" target="consul" value="discover instances">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_apps_redis" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;dashed=1;strokeColor=#b85450;entryX=-0.011;entryY=0.667;entryDx=0;entryDy=0;entryPerimeter=0;" target="redis" value="cache read/write">
+          <mxGeometry relative="1" x="0.0594" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="690" y="260" />
+              <mxPoint x="690" y="170.04" />
+            </Array>
+            <mxPoint x="640" y="260" as="sourcePoint" />
+            <mxPoint x="720" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_apps_mongos" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;" value="cache miss">
+          <mxGeometry relative="1" x="-0.1996" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="670" y="320" />
+              <mxPoint x="670" y="350" />
+            </Array>
+            <mxPoint x="640" y="320" as="sourcePoint" />
+            <mxPoint x="710" y="349.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_mongos_config" edge="1" parent="1" source="mongos" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;dashed=1;" target="configsrv" value="metadata">
+          <mxGeometry relative="1" x="0.6111" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_mongos_rs1" edge="1" parent="1" source="mongos" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;" target="shard1_1" value="rs-shard1">
+          <mxGeometry relative="1" x="-0.579" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="760.02" y="442.51" />
+              <mxPoint x="715" y="442.51" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_mongos_rs2" edge="1" parent="1" source="mongos" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=2;" target="shard2_1" value="rs-shard2">
+          <mxGeometry relative="1" x="0.3334" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1010" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_s1_rep1" edge="1" parent="1" source="shard1_1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=1;dashed=1;strokeColor=#9673a6;" target="shard1_2" value="replication">
+          <mxGeometry relative="1" x="0.6296" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_s1_rep2" edge="1" parent="1" source="shard1_1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=1;dashed=1;strokeColor=#9673a6;" target="shard1_3" value="replication">
+          <mxGeometry relative="1" x="0.6296" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_s2_rep1" edge="1" parent="1" source="shard2_1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=1;dashed=1;strokeColor=#82b366;" target="shard2_2" value="replication">
+          <mxGeometry relative="1" x="0.6296" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_s2_rep2" edge="1" parent="1" source="shard2_1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=1;dashed=1;strokeColor=#82b366;" target="shard2_3" value="replication">
+          <mxGeometry relative="1" x="0.6296" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_api2_consul" edge="1" parent="1" source="api2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;strokeWidth=1;dashed=1;strokeColor=#82b366;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="consul" value="register">
+          <mxGeometry relative="1" x="-0.0175" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+            <mxPoint x="509.9999999999999" y="304.81" as="sourcePoint" />
+            <mxPoint x="317.5" y="304.81" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
