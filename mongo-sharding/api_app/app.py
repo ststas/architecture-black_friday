@@ -87,6 +87,15 @@ async def root():
         collections[collection_name] = {
             "documents_count": await collection.count_documents({})
         }
+        try:
+            collection_stats = await db.command("collStats", collection_name)
+            if "shards" in collection_stats:
+                collections[collection_name]["shards"] = {
+                    shard_name: {"documents_count": shard_stats.get("count", 0)}
+                    for shard_name, shard_stats in collection_stats["shards"].items()
+                }
+        except errors.OperationFailure:
+            pass
     try:
         replica_status = await client.admin.command("replSetGetStatus")
         replica_status = json.dumps(replica_status, indent=2, default=str)
